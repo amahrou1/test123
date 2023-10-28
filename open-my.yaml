@@ -1,0 +1,32 @@
+id: Url-Redirection-Catcher-Updated
+info:
+  name: URL Redirection Template via Appended Payloads
+  author: YourName
+  severity: low
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/http://evil.com"
+      - "{{BaseURL}}/http://evil.com/%2F"
+      - "{{BaseURL}}/http://evil.com////"
+      - "{{BaseURL}}/@evil.com"
+      - "{{BaseURL}}/evil.com"
+      - "{{BaseURL}}/evil,com"
+      - "{{BaseURL}}/@evil,com"
+      - "{{BaseURL}}/@evil,com/%2F"
+      - "{{BaseURL}}///evil,com"
+      - "{{BaseURL}}@evil,com"
+      - "{{BaseURL}}.evil,com"
+      - "{{BaseURL}}.evil.com"
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Location: https://example.com"
+      - type: status
+        status:
+          - 301
+          - 302
+          - 307
