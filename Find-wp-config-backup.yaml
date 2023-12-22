@@ -7,12 +7,31 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-config.php.bak"
+      - "{{BaseURL}}/wp-config.php_orig"
+      - "{{BaseURL}}/wp-config.php.bkp"
+      - "{{BaseURL}}/wp-config.php.old"
+      - "{{BaseURL}}/wp-config.php"
+      - "{{BaseURL}}/wp-config.PHP"
+      - "{{BaseURL}}/wp-config.php.zip"
+      - "{{BaseURL}}/wp-config.php.bk"
+      - "{{BaseURL}}/wp-config.php.swp"
+      - "{{BaseURL}}/wp-config.php...."
+      - "{{BaseURL}}/wp-config.php~"
+      - "{{BaseURL}}/wp-config.php.backup"
+      - "{{BaseURL}}/wp-config.php.save"
+      - "{{BaseURL}}/wp-config.php.new"
+      - "{{BaseURL}}/wp-config.php_old"
+      - "{{BaseURL}}/wp-config.php.orig"
+      - "{{BaseURL}}/wp-config.php.back"
+      - "{{BaseURL}}/wp-config.php_archive"
+      - "{{BaseURL}}/wp-config.php_date"
    
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - dev
+          - configuration
+          - database
         condition: and
 
       - type: status
