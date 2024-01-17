@@ -1,4 +1,4 @@
-id: unauthenticated-mongo-express.yaml
+id: unauthenticated-mongo-express
 info:
   name: Mongo Express Unauthenticated
   author: dhiyaneshDK

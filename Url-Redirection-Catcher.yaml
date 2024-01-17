@@ -12,6 +12,8 @@ requests:
     payloads:
       redirect:
         - "bing.com"
+        - "/@bing.com"
+        - "://bing.com"
         - "http://bing.com"
         - "https://bing.com"
         - "http://bing.com/%2F"

@@ -11,6 +11,8 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/phpmyadmin/setup/index.php"
+      - "{{BaseURL}}/phpMyAdmin/setup/index.php"
+      - "{{BaseURL}}/PMA/setup/index.php"
     matchers:
       - type: word
         words:

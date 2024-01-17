@@ -18,8 +18,12 @@ requests:
     method: GET
     path:
       - "/phpmyadmin"
+      - "/phpmyadmin/setup"
+      - "/phpmyadmin/setup/index.php"
+      - "/phpMyAdmin/setup/index.php"
       - "/phpMyAdmin"
       - "/PMA"
+      - "/PMA/setup/index.php"
     description: Attempt to access phpMyAdmin URL
     condition: or
 
