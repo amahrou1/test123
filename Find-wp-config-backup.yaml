@@ -1,4 +1,4 @@
-id: wp-config backup Exposed
+id: wp-config-backup-Exposed
 info:
   name: Find wp-config backup
   author: Clark
@@ -25,12 +25,13 @@ requests:
       - "{{BaseURL}}/wp-config.php.back"
       - "{{BaseURL}}/wp-config.php_archive"
       - "{{BaseURL}}/wp-config.php_date"
+      - "{{BaseURL}}/common/config.php.new"
+      - "{{BaseURL}}/config.php.new"
    
     matchers-condition: and
     matchers:
       - type: word
         words:
-          - configuration
           - database
         condition: and
 

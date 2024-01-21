@@ -23,12 +23,7 @@ requests:
       - "{{BaseURL}}/db_config.php.bak"
       - "{{BaseURL}}/404.php.bak"
       - "{{BaseURL}}/wp-config.php.bak"
-      - "{{BaseURL}}/config.php.tar.gz"
-      - "{{BaseURL}}/config.php.zip"
-      - "{{BaseURL}}/config.php.old"
-      - "{{BaseURL}}/Download.php?file=. /config.php⨀"
-      - "{{BaseURL}}/config.php~"
-      - "{{BaseURL}}/Download.php?file=⊡⨀/config.php"
+      - "{{BaseURL}}/wp-login.php.bak"
 
     matchers-condition: and
     matchers:

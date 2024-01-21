@@ -11,10 +11,8 @@ requests:
   - method: GET
     path:
       - '{{BaseURL}}/config.properties'
-      - '{{BaseURL}}/ui_config.properties'
       - '{{BaseURL}}/config-user.properties'
       - '{{BaseURL}}/microprofile-config.properties'
-      - '{{BaseURL}}/config.properties.bak'
     matchers:
       - type: word
         part: body
@@ -24,4 +22,3 @@ requests:
           - 'ttfDir='
           - '.mysql.'
           - 'SELECT * FROM'
-          - 'jdbc'

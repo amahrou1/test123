@@ -10,17 +10,14 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/config/parameters.yml"
-      - "{{BaseURL}}/core/config/databases.yml"
-      - "{{BaseURL}}/app/config/parameters.yml"
-      - "{{BaseURL}}/core/config/parameters.yml"
       - "{{BaseURL}}/app_dev.php/_profiler/open?file=app/config/parameters.yml"
+      - "{{BaseURL}}/core/config/databases.yml"
+      - "{{BaseURL}}/core/config/parameters.yml"
 
     matchers:
       - type: word
         words:
-          - "database_driver"
           - "database_host"
           - "database_port"
           - "database_name"
-          - "database_password"
         part: body

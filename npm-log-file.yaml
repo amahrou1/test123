@@ -1,33 +1,30 @@
+id: npm-log-file
+
 info:
-  id: npm-log-file
-  name: Publicly accessible NPM log file
-  author: OpenAI
-  description: Template to detect publicly accessible NPM log files.
-  severity: Low
-  classification:
-    country: any
-    tags:
-      - npm
-      - log
-      - sensitive-data-exposure
+  name: Publicly accessible NPM Log file
+  author: sheikhrishad,DhiyaneshDk
+  severity: low
+  reference:
+    - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
+  metadata:
+    max-request: 2
+    verified: true
+    shodan-query: html:"npm-debug.log"
+  tags: npm,logs,exposure
 
-  matcher-condition: or
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/npm-debug.log"
+      - "{{BaseURL}}/assets/npm-debug.log"
 
-  requests:
-      method: GET
-      path:
-        - "/logs/npm-debug.log"
-        - "/logs/npm.log"
-        - "/logs/yarn-debug.log"
-        - "/logs/yarn.log"
-      description: Check if NPM log file is accessible
-      condition: and
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "info it worked if it ends with ok"
 
-  matchers:
-    - pattern: "npm ERR!|yarn ERR!"
-      type: body
-      description: "Matches error messages from NPM or Yarn log files"
-
-  response:
-    - status: 
-        - 200
+      - type: status
+        status:
+          - 200

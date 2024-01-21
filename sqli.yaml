@@ -16,9 +16,13 @@ requests:
       - "{{BaseURL}}%2A"
       - "{{BaseURL}}%60"
       - "{{BaseURL}}'"
-      - "{{BaseURL}}''"
-      - "{{BaseURL}}\""
-      - "{{BaseURL}}\"'"
+      - "{{BaseURL}}""
+      - "{{BaseURL}}'''"
+      - "{{BaseURL}}'""
+      - "{{BaseURL}}"""
+      - "{{BaseURL}}'1'""
+      - "{{BaseURL}}%20or%201=1--"
+      - "{{BaseURL}}%20or%201=2--"
 
     matchers:
       - type: regex
@@ -34,6 +38,7 @@ requests:
            - "bdb2_"
            - "SQLSTATE"
            - "SQLCODE" 
+           - "Warning"
            - "SybSQLException"
            - "sqlite"
            - "SQLite3"

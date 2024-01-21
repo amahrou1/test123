@@ -1,12 +1,20 @@
 id: default-sql-dump
 
 info:
-  name: MySQL Dump Files
-  author: geeknik,dwisiswant0
+  name: MySQL - Dump Files
+  author: geeknik,dwisiswant0,ELSFA7110
   severity: medium
+  description: A MySQL dump file was found
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
   tags: exposure,backup,mysql
+  metadata:
+    max-request: 20
 
-requests:
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}/1.sql"
@@ -28,6 +36,10 @@ requests:
       - "{{BaseURL}}/translate.sql"
       - "{{BaseURL}}/users.sql"
       - "{{BaseURL}}/wp-content/uploads/dump.sql"
+      - "{{BaseURL}}/wp-content/mysql.sql"
+      - "{{BaseURL}}/test.sql"
+      - "{{BaseURL}}/test1.sql"
+      - "{{BaseURL}}/test2.sql"
     headers:
       Range: "bytes=0-3000"
 
