@@ -4,7 +4,7 @@ info:
   name: Detect Private SSH and TLS Keys
   author: geeknik
   severity: high
-  tags: config,exposure
+  tags: config, exposure
 
 requests:
   - method: GET
@@ -25,6 +25,11 @@ requests:
       - "{{BaseURL}}/.ssh/id_dsa"
       - "{{BaseURL}}/{{Hostname}}.key"
       - "{{BaseURL}}/{{Hostname}}.pem"
+      - "{{BaseURL}}/private.pem"
+      - "{{BaseURL}}/secret.key"
+      - "{{BaseURL}}/private.key"
+      - "{{BaseURL}}/config/ssl.key"
+      - "{{BaseURL}}/config/ssl/private.key"
 
     matchers-condition: and
     matchers:
@@ -36,6 +41,12 @@ requests:
           - "BEGIN DSA PRIVATE KEY"
           - "BEGIN EC PRIVATE KEY"
           - "BEGIN PGP PRIVATE KEY BLOCK"
+        condition: or
+
+      - type: regex
+        regex:
+          - "-----BEGIN .* PRIVATE KEY-----"
+          - "-----BEGIN .* ENCRYPTED PRIVATE KEY-----"
         condition: or
 
       - type: status
