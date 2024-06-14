@@ -7,24 +7,24 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/http://evil.com"
-      - "{{BaseURL}}/http://evil.com/%2F"
-      - "{{BaseURL}}/http://evil.com////"
-      - "{{BaseURL}}/@evil.com"
-      - "{{BaseURL}}/evil.com"
-      - "{{BaseURL}}/evil,com"
-      - "{{BaseURL}}/@evil,com"
-      - "{{BaseURL}}/@evil,com/%2F"
-      - "{{BaseURL}}///evil,com"
-      - "{{BaseURL}}@evil,com"
-      - "{{BaseURL}}.evil,com"
-      - "{{BaseURL}}.evil.com"
+      - "{{BaseURL}}/http://bing.com"
+      - "{{BaseURL}}/http://bing.com/%2F"
+      - "{{BaseURL}}/http://bing.com////"
+      - "{{BaseURL}}/@bing.com"
+      - "{{BaseURL}}/bing.com"
+      - "{{BaseURL}}/bing,com"
+      - "{{BaseURL}}/@bing,com"
+      - "{{BaseURL}}/@bing,com/%2F"
+      - "{{BaseURL}}///bing,com"
+      - "{{BaseURL}}@bing,com"
+      - "{{BaseURL}}.bing,com"
+      - "{{BaseURL}}.bing.com"
     matchers-condition: and
     matchers:
       - type: word
         part: header
         words:
-          - "Location: https://example.com"
+          - "Location: https://www.bing.com"
       - type: status
         status:
           - 301
