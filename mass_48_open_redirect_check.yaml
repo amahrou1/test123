@@ -7,6 +7,8 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/https://bing.com/"
+      - "{{BaseURL}}/logout.do?sysparm_goto_url=https://bing.com/"
+      - "{{BaseURL}}/?sysparm_goto_url=https://bing.com/"
       - "{{BaseURL}}//https://bing.com//"
       - "{{BaseURL}}/?targetOrigin=https://bing.com/"
       - "{{BaseURL}}/?fallback=https://bing.com/"
